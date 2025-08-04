@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip install -r requirements.txt -t .
+  build:
+    commands:
+      - zip -r lambda.zip .
+      - aws s3 cp lambda.zip s3://your-bucket-name/
+artifacts:
+  files:
+    - lambda.zip
