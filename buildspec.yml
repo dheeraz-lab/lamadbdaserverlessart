@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - zip -r lambda.zip .
-      - aws s3 cp lambda.zip s3://your-bucket-name/
+      - aws s3 cp lambda.zip s3://lamdba-artifacts-prod/
 artifacts:
   files:
     - lambda.zip
